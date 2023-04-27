@@ -69,4 +69,18 @@ public class RestAssuredTests {
             .andReturn();
     response.print();
   }
+
+  @Test
+  public void testGetStatusCode(){
+
+    Response response = RestAssured
+            .given()
+            .redirects()
+            .follow(false)
+            .when()
+            .get(" https://playground.learnqa.ru/api/get_303")//get_500//check_type//something//get_303
+            .andReturn();
+    int statusCode = response.getStatusCode();
+    System.out.println(statusCode);
+  }
 }
