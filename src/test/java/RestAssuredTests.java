@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class RestAssuredTests {
   @Test
@@ -39,6 +40,33 @@ public class RestAssuredTests {
     } else {
       System.out.println("The key is absent");
     }
+  }
 
+  @Test
+  public void testGetCheckType(){
+
+    Response response = RestAssured
+            .given()
+            .queryParam("param1", "value1")
+            .queryParam("param2", "value2")
+            .get(" https://playground.learnqa.ru/api/check_type")
+            .andReturn();
+    response.print();
+  }
+
+  @Test
+  public void testPostCheckType(){
+    Map<String, Object> body= new HashMap<>();
+    body.put("param1", "value1");
+    body.put("param2", "value2");
+
+    Response response = RestAssured
+            .given()
+            .body(body)
+            //.body("{\"param1\":\"value1\",\"param2\":\"value2\"}")
+            //.body("param1=value1&param2=value2")
+            .post(" https://playground.learnqa.ru/api/check_type")
+            .andReturn();
+    response.print();
   }
 }
