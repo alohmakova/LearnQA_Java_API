@@ -3,8 +3,6 @@ import io.restassured.path.json.JsonPath;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
-import java.util.Map;
-import java.util.Objects;
 
 public class Ex5ParsingJsonTest {
   @Test
