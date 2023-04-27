@@ -1,4 +1,5 @@
 import io.restassured.RestAssured;
+import io.restassured.http.Headers;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.Test;
@@ -80,7 +81,31 @@ public class RestAssuredTests {
             .when()
             .get(" https://playground.learnqa.ru/api/get_303")//get_500//check_type//something//get_303
             .andReturn();
+    response.print();
+    String locationHeader = response.getHeader("Location");
     int statusCode = response.getStatusCode();
     System.out.println(statusCode);
+    System.out.println(locationHeader);
+  }
+
+  @Test
+  public void testGetHeaders() {
+    Map<String, String> headers = new HashMap<>();
+    headers.put("myHeader1", "myValue1");
+    headers.put("myHeader2", "myValue2");
+
+
+    Response response = RestAssured
+            .given()
+            .headers(headers)
+            .when()
+            .get(" https://playground.learnqa.ru/api/show_all_headers")
+            .andReturn();
+
+    response.prettyPrint();
+
+
+    Headers responseHeaders = response.getHeaders();
+    System.out.println(responseHeaders);
   }
 }
