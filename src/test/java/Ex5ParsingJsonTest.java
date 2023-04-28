@@ -21,7 +21,7 @@ public class Ex5ParsingJsonTest {
       System.out.println("There is no messages");
     }
 
-    String secondMessage = response.getString("messages[1].message");
+    String secondMessage = response.get("messages[1].message");
     System.out.println("\nТекст второго сообщения: " + secondMessage);
 
   }
