@@ -1,14 +1,15 @@
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import java.util.*;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
-public class GetPasswordsTest {
+public class GetPasswordsFromWiki {
 
   private WebDriver driver;
 
@@ -34,20 +35,17 @@ public class GetPasswordsTest {
           }
         }
       }
-      //System.out.println(passwords.size());
-      //System.out.println(passwords);
-      //System.out.println(passwords.iterator().next());
-
 
     return passwords;
     }
-
-
 
   @AfterEach
   public void tearDown() throws Exception {
     driver.quit();
   }
 
-}
+  }
+
+
+
 
