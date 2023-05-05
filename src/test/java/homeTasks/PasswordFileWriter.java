@@ -1,3 +1,6 @@
+package homeTasks;
+
+import homeTasks.GetPasswordsFromWiki;
 import org.junit.jupiter.api.Test;
 
 import java.io.FileWriter;

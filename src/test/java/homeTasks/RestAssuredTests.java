@@ -1,3 +1,5 @@
+package homeTasks;
+
 import io.restassured.RestAssured;
 import io.restassured.http.Cookies;
 import io.restassured.http.Headers;
