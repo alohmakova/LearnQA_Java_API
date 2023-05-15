@@ -14,7 +14,7 @@ public class Assertions {
 
     assertEquals(expectedValue, value, "JSON value is not equal to expected value");
   }
-  public static void assertUserAgent(Response response, String keyName, String expectedValue){
+  public static void assertJsonByName(Response response, String keyName, String expectedValue){
     response.then().assertThat().body("$", hasKey(keyName));
 
     String value = response.jsonPath().get(keyName);

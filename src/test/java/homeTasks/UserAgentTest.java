@@ -38,9 +38,9 @@ public class UserAgentTest {
             .andReturn();
     response.prettyPrint();
 
-    Assertions.assertUserAgent(response, "platform", platform);
-    Assertions.assertUserAgent(response, "browser", browser);
-    Assertions.assertUserAgent(response, "device", device);
+    Assertions.assertJsonByName(response, "platform", platform);
+    Assertions.assertJsonByName(response, "browser", browser);
+    Assertions.assertJsonByName(response, "device", device);
 
   }
 }

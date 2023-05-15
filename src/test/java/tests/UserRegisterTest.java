@@ -16,10 +16,11 @@ public class UserRegisterTest extends BaseTestCase {
     String email = "vinkotov@example.com";
     Map<String, String> userData = new HashMap<>();
     userData.put("email", email);
-    userData.put("password", "123");
-    userData.put("username", "learnqa");
-    userData.put("firstName", "learnqa");
-    userData.put("lastName", "learnqa");
+    userData = DataGenerator.getRegistrationData(userData);
+//    userData.put("password", "123");
+//    userData.put("username", "learnqa");
+//    userData.put("firstName", "learnqa");
+//    userData.put("lastName", "learnqa");
 
     Response responseCreateAuth = RestAssured
             .given()
@@ -36,12 +37,12 @@ public class UserRegisterTest extends BaseTestCase {
   @Test
   public void testCreateUserSuccessfully() {
     String email = DataGenerator.getRandomEmail();
-    Map<String, String> userData = new HashMap<>();
-    userData.put("email", email);
-    userData.put("password", "123");
-    userData.put("username", "learnqa");
-    userData.put("firstName", "learnqa");
-    userData.put("lastName", "learnqa");
+    Map<String, String> userData = DataGenerator.getRegistrationData();//new HashMap<>();
+//    userData.put("email", email);
+//    userData.put("password", "123");
+//    userData.put("username", "learnqa");
+//    userData.put("firstName", "learnqa");
+//    userData.put("lastName", "learnqa");
 
     Response responseCreateAuth = RestAssured
             .given()
