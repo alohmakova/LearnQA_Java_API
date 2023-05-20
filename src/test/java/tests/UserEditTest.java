@@ -1,8 +1,6 @@
 package tests;
 
-import io.qameta.allure.Description;
-import io.qameta.allure.Epic;
-import io.qameta.allure.Feature;
+import io.qameta.allure.*;
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
@@ -24,6 +22,7 @@ public class UserEditTest extends BaseTestCase {
   String header;
 
   @Test
+  @TmsLink("test-1")
   @Description("This test successfully edits user")
   @DisplayName("Test positive edit user: замена на новое имя")
   public void testEditJustCreatedUser() {
@@ -69,6 +68,7 @@ public class UserEditTest extends BaseTestCase {
   }
 
   @Test
+  @TmsLink("test-2")
   @Description("This test checks status of user edition with name = 1 symbol")
   @DisplayName("Test negative edit user: замена на имя из 1 буквы")
   public void testEditChangeToShortName() {
@@ -121,6 +121,7 @@ public class UserEditTest extends BaseTestCase {
   }
 
   @Test
+  @TmsLink("test-3")
   @Description("This test checks status of user edition with email w/o @ symbol")
   @DisplayName("Test negative edit user: замена на емеил без собаки")
   public void testEditWithoutAtInEmail() {
@@ -171,6 +172,7 @@ public class UserEditTest extends BaseTestCase {
   }
 
   @Test
+  @TmsLink("test-4")
   @Description("This test checks status of user edition by other user")
   @DisplayName("Test negative edit user: редактирование другим пользователем")
   public void testEditOneUserByOtherUser() {
@@ -232,6 +234,7 @@ public class UserEditTest extends BaseTestCase {
   }
 
   @Test
+  @TmsLink("test-5")
   @Description("This test checks status of user edition w/o authorisation")
   @DisplayName("Test negative edit user: редактирование неавторизованного пользователя")
   public void testEditNotAuthorisedUser() {

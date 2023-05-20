@@ -3,6 +3,7 @@ package tests;
 import io.qameta.allure.Description;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
+import io.qameta.allure.Link;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import lib.ApiCoreRequests;
@@ -17,6 +18,7 @@ import java.util.Map;
 
 @Epic("Delete user cases")
 @Feature("Deletion")
+@Link(name = "Ex18: Тесты на DELETE", url = "https://software-testing.ru/lms/mod/assign/view.php?id=326423")
 public class UserDeleteTest extends BaseTestCase {
   private final ApiCoreRequests apiCoreRequests = new ApiCoreRequests();
   String cookie;

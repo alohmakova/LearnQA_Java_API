@@ -1,5 +1,6 @@
 package homeTasks;
 
+import io.qameta.allure.Flaky;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.Test;
@@ -24,6 +25,7 @@ public class Ex9FindCorrectPasswordTest {
   }
 
   @Test
+  @Flaky
   public void password() throws IOException {
 
     List<String> passwords = readPasswords("passwords.txt");
